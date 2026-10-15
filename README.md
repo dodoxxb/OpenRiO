@@ -63,7 +63,7 @@ python -m pip install -r requirements.txt
 
 ### Get the model assets
 
-The **full release archive** includes ten tensor-only detector weights and two stream-specific adaptation snapshots. The **source archive** omits these tensors. If using source only, obtain the companion assets from the maintainer and preserve this layout:
+The detector weights and adapter snapshots are **not** stored in Git. Download them from the [Releases page](https://github.com/dodoxxb/OpenRiO/releases/tag/v0.1.0-preview.7) and place each asset in the directory shown below.
 
 ```text
 OpenRiO/
@@ -71,11 +71,37 @@ OpenRiO/
 ├── openrio.py
 ├── models.json
 ├── configs/
-├── weights/       # detector .pth files
-└── adapters/      # terminal adaptation .pth files and metadata
+├── weights/       # detector .pth files  ->  all 10 assets below
+└── adapters/      # terminal adaptation snapshots  ->  all 4 assets below
 ```
 
-Primary references are `n`, `s`, `m` and `l`. `n_calibrated` is an optimization result; the four `*_multiview` models and `n_calibration_parent` bind comparisons to their exact historical sources. The adapter files are parameter snapshots, not standalone detectors. The detector weights and adapter snapshots are distributed as GitHub Release assets rather than in the repository; download them from the Releases page and place them using the layout above.
+**Detector weights — place in `weights/`**
+
+| Release asset | Size | Role |
+| :--- | ---: | :--- |
+| `n.pth` | 15.6 MB | Nano — primary reproduction reference (AP50 71.891) |
+| `s.pth` | 32.0 MB | Small — primary reproduction reference (75.020) |
+| `m.pth` | 73.9 MB | Medium — primary reproduction reference (76.448) |
+| `l.pth` | 107.9 MB | Large — primary reproduction reference (76.199) |
+| `n_calibrated.pth` | 15.6 MB | Nano normalization-calibration result (71.978) |
+| `n_compact_multiview.pth` | 15.7 MB | Compact four-coordinate Nano multi-view source |
+| `n_rotation_multiview.pth` | 15.6 MB | Public five-coordinate Nano multi-view source |
+| `s_multiview.pth` | 32.0 MB | Historical Small source for the 73.982 → 76.465 result |
+| `m_multiview.pth` | 73.9 MB | Historical Medium source for the 74.790 → 77.512 result |
+| `n_calibration_parent.pth` | 15.6 MB | Parent checkpoint for the Nano calibration control |
+
+**Adaptation snapshots — place in `adapters/`**
+
+| Release asset | Size | Role |
+| :--- | ---: | :--- |
+| `n_noise_terminal_norms.pth` | 0.23 MB | Terminal normalization snapshot, Nano noise stream |
+| `n_noise_terminal_norms.json` | 0.5 KB | Metadata and source binding for the snapshot above |
+| `s_noise_terminal_norms.pth` | 0.32 MB | Terminal normalization snapshot, Small noise stream |
+| `s_noise_terminal_norms.json` | 0.5 KB | Metadata and source binding for the snapshot above |
+
+Plain filenames such as `n.pth` therefore mean `weights/n.pth`; no two assets share a name, so nothing collides when they are downloaded flat from the Releases page. `models.json` records every weight's expected path and SHA-256, and each `adapters/*.json` binds its snapshot to one parent model.
+
+Primary references are `n`, `s`, `m` and `l`. `n_calibrated` is an optimization result; the four `*_multiview` models and `n_calibration_parent` bind comparisons to their exact historical sources. The adapter files are parameter snapshots, not standalone detectors.
 
 With all companion assets in place, verify their identity:
 

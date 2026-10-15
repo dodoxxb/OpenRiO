@@ -63,7 +63,7 @@ python -m pip install -r requirements.txt
 
 ### 放置权重
 
-完整包包含 **10 份检测器权重和 2 份适配终点参数快照**。源码包不含这些张量文件；使用源码包时，需要获取配套资产并保持以下目录结构：
+检测器权重与适配快照**不存放在 Git 中**。请从 [Releases 页面](https://github.com/dodoxxb/OpenRiO/releases/tag/v0.1.0-preview.7)下载，并按下表放入对应目录。
 
 ```text
 OpenRiO/
@@ -71,11 +71,37 @@ OpenRiO/
 ├── openrio.py
 ├── models.json
 ├── configs/
-├── weights/       # 检测器 .pth 文件
-└── adapters/      # 适配终点 .pth 文件及元数据
+├── weights/       # 检测器 .pth 文件  ->  下表的 10 份资产
+└── adapters/      # 适配终点快照    ->  下表的 4 份资产
 ```
 
-`n`、`s`、`m`、`l` 是主要复现参考；`n_calibrated` 是校准结果。四份 `*_multiview` 与 `n_calibration_parent` 用于复现优化的精确历史起点。适配快照不是独立检测器。检测器权重与适配快照不随仓库分发，请从 GitHub Releases 资产页下载后按上述结构放置。
+**检测器权重 — 放入 `weights/`**
+
+| Release 资产 | 大小 | 用途 |
+| :--- | ---: | :--- |
+| `n.pth` | 15.6 MB | Nano 主复现参考（AP50 71.891） |
+| `s.pth` | 32.0 MB | Small 主复现参考（75.020） |
+| `m.pth` | 73.9 MB | Medium 主复现参考（76.448） |
+| `l.pth` | 107.9 MB | Large 主复现参考（76.199） |
+| `n_calibrated.pth` | 15.6 MB | Nano 归一化校准结果（71.978） |
+| `n_compact_multiview.pth` | 15.7 MB | 紧凑四坐标 Nano 多视图源权重 |
+| `n_rotation_multiview.pth` | 15.6 MB | 公开五坐标 Nano 多视图源权重 |
+| `s_multiview.pth` | 32.0 MB | Small 多视图（73.982 → 76.465）的历史起点 |
+| `m_multiview.pth` | 73.9 MB | Medium 多视图（74.790 → 77.512）的历史起点 |
+| `n_calibration_parent.pth` | 15.6 MB | Nano 校准对照的父权重 |
+
+**适配终点快照 — 放入 `adapters/`**
+
+| Release 资产 | 大小 | 用途 |
+| :--- | ---: | :--- |
+| `n_noise_terminal_norms.pth` | 0.23 MB | Nano 噪声流的终点归一化快照 |
+| `n_noise_terminal_norms.json` | 0.5 KB | 上者对应的元数据与源绑定 |
+| `s_noise_terminal_norms.pth` | 0.32 MB | Small 噪声流的终点归一化快照 |
+| `s_noise_terminal_norms.json` | 0.5 KB | 上者对应的元数据与源绑定 |
+
+因此像 `n.pth` 这样的裸文件名指的是 `weights/n.pth`。所有资产文件名互不重复，从 Releases 页面平铺下载不会产生冲突。`models.json` 记录了每份权重的预期路径与 SHA-256，每个 `adapters/*.json` 则把快照绑定到其父模型。
+
+`n`、`s`、`m`、`l` 是主要复现参考；`n_calibrated` 是校准结果。四份 `*_multiview` 与 `n_calibration_parent` 用于复现优化的精确历史起点。适配快照不是独立检测器。
 
 资产齐全后核验：
 
