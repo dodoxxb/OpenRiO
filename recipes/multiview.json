@@ -1,0 +1,23 @@
+{
+  "views": [
+    "original",
+    "horizontal_flip",
+    "rot90",
+    "rot180",
+    "rot270"
+  ],
+  "edge": 800,
+  "nms_iou": 0.5,
+  "max_detections": 300,
+  "score": "s*(0.75+0.25*mean_best_other_view_iou)",
+  "group_min_iou": 0.55,
+  "minimum_group_members": 3,
+  "post_geometry_nms": false,
+  "models": [
+    "n_compact_multiview",
+    "n_rotation_multiview",
+    "s_multiview",
+    "m_multiview"
+  ],
+  "reference_metrics": "evidence/positive_optimizations/multiview_reference_metrics.json"
+}

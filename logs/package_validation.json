@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "version": "0.1.0-preview.7",
+  "date": "2026-10-16",
+  "scope": "Packaging/bibliography changes. No new AP experiment or GPU job is implied.",
+  "byte_identical_runtime_and_asset_files": 139,
+  "python_syntax_files": 110,
+  "identity_check": "10 detector weights, 10 configurations, 2 bound adapter snapshots and 110 Python files passed the packaged checker.",
+  "source_hash_manifest_change": "Removed report/render_overview.py, which is a figure renderer omitted from this PDF-only release. All retained source digests unchanged.",
+  "readme_local_links_checked": 60,
+  "broken_links": [],
+  "report": {
+    "pdf_count": 1,
+    "path": "report/main.pdf",
+    "pages": 37,
+    "sha256": "063c201c7a047bbfdfbcc81baee95a03b8994e3da588ffd6dd07915779a4b5f3",
+    "bibliography_entries": 37,
+    "undefined_citations_or_references": false,
+    "reference_pages_visually_checked": [
+      14,
+      15
+    ]
+  },
+  "bibliography": {
+    "entries": 37,
+    "publisher_doi": 14,
+    "arxiv_doi": 12,
+    "official_url_without_doi": 11,
+    "new_related_references": 2
+  },
+  "previous_file_count": 620,
+  "previous_pdf_count": 16,
+  "removed_material": "Superseded progress snapshots, per-window duplicate records, report sources/renderers, standalone figures and compilation intermediates.",
+  "retained_records": "Consolidated complete-evaluation, positive-method and mechanism receipts, continuation observations, one pending-work snapshot and bibliography audit."
+}

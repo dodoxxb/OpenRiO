@@ -1,0 +1,14 @@
+PASS n: configuration and tensor-only weight archive identity
+PASS s: configuration and tensor-only weight archive identity
+PASS n_calibrated: configuration and tensor-only weight archive identity
+PASS m: configuration and tensor-only weight archive identity
+PASS l: configuration and tensor-only weight archive identity
+PASS n_compact_multiview: configuration and tensor-only weight archive identity
+PASS n_rotation_multiview: configuration and tensor-only weight archive identity
+PASS s_multiview: configuration and tensor-only weight archive identity
+PASS m_multiview: configuration and tensor-only weight archive identity
+PASS n_calibration_parent: configuration and tensor-only weight archive identity
+PASS n_noise_terminal_norms.pth: tensor snapshot identity and source binding
+PASS s_noise_terminal_norms.pth: tensor snapshot identity and source binding
+PASS 110 packaged runtime source files
+This verifies identity; dataset AP and deserialization are separate checks.

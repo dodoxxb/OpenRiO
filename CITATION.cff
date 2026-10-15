@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "Please credit RiO-DETR for the original method and this versioned community artifact for its reproduction, analysis, and engineering work."
+type: software
+title: "OpenRiO: A Community Reproduction of RiO-DETR with Practical Accuracy and Efficiency Improvements"
+authors:
+  - family-names: Du
+    given-names: Zhicheng
+    email: duzc21@mails.tsinghua.edu.cn
+    affiliation: "Tsinghua Shenzhen International Graduate School, Tsinghua University"
+  - family-names: Ma
+    given-names: Lan
+    email: malan@sz.tsinghua.edu.cn
+    affiliation: "Tsinghua Shenzhen International Graduate School, Tsinghua University"
+version: 0.1.0-preview.7
+license: Apache-2.0
+repository-code: "https://github.com/dodoxxb/OpenRiO"
+url: "https://github.com/dodoxxb/OpenRiO"
+abstract: "Independent community reproduction and optimization. Trained-weight terms are documented separately in WEIGHTS_NOTICE.txt. Lan Ma is the corresponding author."
+keywords:
+  - rotated-object-detection
+  - remote-sensing
+  - rio-detr
+  - rt-detr
+  - dior-r
+  - reproducibility
+date-released: 2026-10-16
+references:
+  - type: report
+    authors:
+      - family-names: Du
+        given-names: Zhicheng
+      - family-names: Ma
+        given-names: Lan
+    title: "OpenRiO: A Community Reproduction of RiO-DETR with Practical Accuracy and Efficiency Improvements"
+    year: 2026
+    month: 10
+    doi: "10.13140/RG.2.2.16995.11040"
+    institution: "Tsinghua Shenzhen International Graduate School, Tsinghua University"
+    url: "https://www.researchgate.net/publication/415911327_OpenRiO_A_Community_Reproduction_of_RiO-DETR_with_Practical_Accuracy_and_Efficiency_Improvements"

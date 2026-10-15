@@ -1,0 +1,533 @@
+{
+  "scope": "Recorded complete evaluations and state identity checks for released assets; separate experiments retain their original populations and timestamps.",
+  "source_independent_audits": {
+    "n": {
+      "status": {
+        "status": "PASS",
+        "checks": {
+          "ema": true,
+          "raw": true,
+          "ema_raw_bn": true,
+          "ema_cal_a": true,
+          "ema_cal_b": true
+        },
+        "fresh_xml_hash_verified": true,
+        "known_historical_duplicate_exposure": true,
+        "no_paper_protocol_equivalence_claim": true,
+        "cuda_used": false,
+        "at": 1791879627.1212475
+      },
+      "independent_status": {
+        "status": "PASS",
+        "images": 11738,
+        "at": "2026-10-13T16:18:12.134595+08:00",
+        "prediction_sha256": "a5241767c270db622844aeb8394594a43c38cb790af2c19acef688f161cda016",
+        "elapsed_seconds": 36.189443048031535,
+        "tolerance_ap_points": 0.01,
+        "disclosure": "Independently written AP and OpenCV polygon intersection; same XML annotation rectangle convention and VOC07 metric. Not proof of exact paper protocol. Numerical disagreements are reviewed, not tuned away."
+      },
+      "independent_results": {
+        "ap50": {
+          "value": 71.89083413559604,
+          "expected": 71.89083442091942,
+          "delta": -2.853233809219091e-07,
+          "per_class": {
+            "airplane": 85.26972369714217,
+            "airport": 57.34338872981343,
+            "baseballfield": 84.52862961725755,
+            "basketballcourt": 87.53657666119662,
+            "bridge": 48.50880761038173,
+            "chimney": 79.1835140098225,
+            "expressway-service-area": 87.75555383075367,
+            "expressway-toll-station": 75.09701279076663,
+            "dam": 39.98335146937858,
+            "golffield": 82.06716613336043,
+            "groundtrackfield": 83.7353527545929,
+            "harbor": 47.88753078742461,
+            "overpass": 60.472856732932,
+            "ship": 86.48995811289008,
+            "stadium": 80.24193536151539,
+            "storagetank": 69.35063979842447,
+            "tenniscourt": 89.61161158301614,
+            "trainstation": 67.32623441652818,
+            "vehicle": 53.85146628726613,
+            "windmill": 71.57537232745777
+          }
+        },
+        "ap75": {
+          "value": 46.054607994579285,
+          "expected": 46.05460777878761,
+          "delta": 2.1579167253094056e-07,
+          "per_class": {
+            "airplane": 52.79615711082112,
+            "airport": 11.928007535805756,
+            "baseballfield": 55.712448331442744,
+            "basketballcourt": 79.96487089178778,
+            "bridge": 21.63778738203374,
+            "chimney": 71.01274241100658,
+            "expressway-service-area": 51.92628086290576,
+            "expressway-toll-station": 51.80804350159385,
+            "dam": 7.764767027798701,
+            "golffield": 45.490448363125324,
+            "groundtrackfield": 73.69287826798178,
+            "harbor": 25.853752209381625,
+            "overpass": 39.689533014527775,
+            "ship": 64.41510265523736,
+            "stadium": 68.10790219090201,
+            "storagetank": 40.53556810725819,
+            "tenniscourt": 80.91446919874711,
+            "trainstation": 26.58606423911723,
+            "vehicle": 28.665518489750948,
+            "windmill": 22.589818100360308
+          }
+        }
+      }
+    },
+    "s": {
+      "status": {
+        "status": "PASS",
+        "checks": {
+          "ema": true,
+          "raw": true,
+          "ema_raw_bn": true,
+          "ema_cal_a": true,
+          "ema_cal_b": true
+        },
+        "fresh_xml_hash_verified": true,
+        "known_historical_duplicate_exposure": true,
+        "no_paper_protocol_equivalence_claim": true,
+        "cuda_used": false,
+        "at": 1791880111.6057851
+      },
+      "independent_status": {
+        "status": "PASS",
+        "images": 11738,
+        "at": "2026-10-13T16:26:14.451815+08:00",
+        "prediction_sha256": "3819a1d52900888e4015ca3b30e0a3fff392c726b3098133e2d6ea0719b30b47",
+        "elapsed_seconds": 35.26417214202229,
+        "tolerance_ap_points": 0.01,
+        "disclosure": "Independently written AP and OpenCV polygon intersection; same XML annotation rectangle convention and VOC07 metric. Not proof of exact paper protocol. Numerical disagreements are reviewed, not tuned away."
+      },
+      "independent_results": {
+        "ap50": {
+          "value": 75.02020053565502,
+          "expected": 75.02020224928856,
+          "delta": -1.7136335372924805e-06,
+          "per_class": {
+            "airplane": 89.47405815124512,
+            "airport": 60.628654164346784,
+            "baseballfield": 86.22718182477084,
+            "basketballcourt": 89.42518776113336,
+            "bridge": 55.14410365034234,
+            "chimney": 80.78324740583246,
+            "expressway-service-area": 89.18988596309315,
+            "expressway-toll-station": 79.7687478363514,
+            "dam": 49.642260846766554,
+            "golffield": 82.42584114724939,
+            "groundtrackfield": 84.74780917167664,
+            "harbor": 48.03394499150189,
+            "overpass": 64.92417779835787,
+            "ship": 87.8820690241727,
+            "stadium": 82.8300733457912,
+            "storagetank": 77.0857420834628,
+            "tenniscourt": 90.14620347456498,
+            "trainstation": 69.90573541684584,
+            "vehicle": 59.140781380913474,
+            "windmill": 72.99830527468161
+          }
+        },
+        "ap75": {
+          "value": 51.546307685784996,
+          "expected": 51.54651753604412,
+          "delta": -0.0002098502591252327,
+          "per_class": {
+            "airplane": 64.87117192961954,
+            "airport": 18.952218515121125,
+            "baseballfield": 66.90115874463861,
+            "basketballcourt": 81.14045634865761,
+            "bridge": 25.963208587332204,
+            "chimney": 71.83789665048774,
+            "expressway-service-area": 60.3242581540888,
+            "expressway-toll-station": 59.27028667859056,
+            "dam": 14.172405880791219,
+            "golffield": 49.586780318482354,
+            "groundtrackfield": 76.38095695186745,
+            "harbor": 27.819555354389276,
+            "overpass": 41.02373285727067,
+            "ship": 75.32156922600485,
+            "stadium": 73.09767068787055,
+            "storagetank": 53.177545287392356,
+            "tenniscourt": 85.3342744437131,
+            "trainstation": 32.72160891951485,
+            "vehicle": 33.96703885360198,
+            "windmill": 19.062359326265074
+          }
+        }
+      }
+    },
+    "m": {
+      "status": {
+        "status": "PASS",
+        "checks": {
+          "ema": true,
+          "raw": true,
+          "ema_raw_bn": true,
+          "ema_cal_a": true,
+          "ema_cal_b": true
+        },
+        "fresh_xml_hash_verified": true,
+        "known_historical_duplicate_exposure": true,
+        "no_paper_protocol_equivalence_claim": true,
+        "cuda_used": false,
+        "at": 1791881469.2483761
+      },
+      "independent_status": {
+        "status": "PASS",
+        "images": 11738,
+        "at": "2026-10-13T16:48:51.731214+08:00",
+        "prediction_sha256": "2a33e666906e374d0021c5d638e0178e1948fe7b7d587c3e6050a54a0425ed85",
+        "elapsed_seconds": 33.286712967033964,
+        "tolerance_ap_points": 0.01,
+        "disclosure": "Independently written AP and OpenCV polygon intersection; same XML annotation rectangle convention and VOC07 metric. Not proof of exact paper protocol. Numerical disagreements are reviewed, not tuned away."
+      },
+      "independent_results": {
+        "ap50": {
+          "value": 76.44814662635328,
+          "expected": 76.44814759492874,
+          "delta": -9.68575463389243e-07,
+          "per_class": {
+            "airplane": 90.01625234430487,
+            "airport": 64.13282982327722,
+            "baseballfield": 88.22479410604997,
+            "basketballcourt": 89.99463807452808,
+            "bridge": 57.81974372538653,
+            "chimney": 81.43163458867507,
+            "expressway-service-area": 89.49849876490507,
+            "expressway-toll-station": 80.92282529581676,
+            "dam": 49.26481368866833,
+            "golffield": 82.9787487333471,
+            "groundtrackfield": 85.74103658849542,
+            "harbor": 53.17156392742287,
+            "overpass": 66.17299108342691,
+            "ship": 88.27761194922708,
+            "stadium": 82.72550918839194,
+            "storagetank": 78.07449156587775,
+            "tenniscourt": 90.36194248632951,
+            "trainstation": 72.5391325964169,
+            "vehicle": 63.866013017567724,
+            "windmill": 73.74786097895016
+          }
+        },
+        "ap75": {
+          "value": 54.05009233615023,
+          "expected": 54.05009306967259,
+          "delta": -7.335223628501808e-07,
+          "per_class": {
+            "airplane": 71.34983837604523,
+            "airport": 22.68359282646667,
+            "baseballfield": 66.25398444858465,
+            "basketballcourt": 86.17357123981823,
+            "bridge": 27.051627212627366,
+            "chimney": 72.13784185322848,
+            "expressway-service-area": 62.43796836246144,
+            "expressway-toll-station": 62.55335442044518,
+            "dam": 13.183571104044942,
+            "golffield": 51.86525935476477,
+            "groundtrackfield": 79.04505892233415,
+            "harbor": 31.640323624014854,
+            "overpass": 43.73635012995113,
+            "ship": 77.62633182785727,
+            "stadium": 70.37923901595853,
+            "storagetank": 54.59814884445884,
+            "tenniscourt": 85.1316433061253,
+            "trainstation": 37.44386194104498,
+            "vehicle": 37.26409164850008,
+            "windmill": 28.446188264272433
+          }
+        }
+      }
+    },
+    "l": {
+      "status": {
+        "status": "PASS",
+        "checks": {
+          "ema": true,
+          "raw": true,
+          "ema_raw_bn": true,
+          "ema_cal_a": true,
+          "ema_cal_b": true
+        },
+        "fresh_xml_hash_verified": true,
+        "known_historical_duplicate_exposure": true,
+        "no_paper_protocol_equivalence_claim": true,
+        "cuda_used": false,
+        "at": 1791880526.3629599
+      },
+      "independent_status": {
+        "status": "PASS",
+        "images": 11738,
+        "at": "2026-10-13T16:33:15.938404+08:00",
+        "prediction_sha256": "db29bbf32dc0a0c1063c0549ba047c228bf401d87e7aa7218cc175cb0a7f6400",
+        "elapsed_seconds": 33.31097198498901,
+        "tolerance_ap_points": 0.01,
+        "disclosure": "Independently written AP and OpenCV polygon intersection; same XML annotation rectangle convention and VOC07 metric. Not proof of exact paper protocol. Numerical disagreements are reviewed, not tuned away."
+      },
+      "independent_results": {
+        "ap50": {
+          "value": 76.19856578805908,
+          "expected": 76.19856685400009,
+          "delta": -1.065941006572757e-06,
+          "per_class": {
+            "airplane": 89.85001769932833,
+            "airport": 64.40694724971597,
+            "baseballfield": 86.92941123789008,
+            "basketballcourt": 90.09273214773698,
+            "bridge": 56.981080364097245,
+            "chimney": 80.83195307038046,
+            "expressway-service-area": 89.31386470794678,
+            "expressway-toll-station": 81.95107376033609,
+            "dam": 48.10481460934336,
+            "golffield": 82.76273743672805,
+            "groundtrackfield": 85.5700433254242,
+            "harbor": 54.80132582174107,
+            "overpass": 66.15442125634713,
+            "ship": 88.34684816273776,
+            "stadium": 84.07393477179788,
+            "storagetank": 77.64773531393571,
+            "tenniscourt": 90.25482481176202,
+            "trainstation": 67.86179430782795,
+            "vehicle": 64.44713354788043,
+            "windmill": 73.58862215822394
+          }
+        },
+        "ap75": {
+          "value": 53.814746864372864,
+          "expected": 53.814746253192425,
+          "delta": 6.111804395914078e-07,
+          "per_class": {
+            "airplane": 67.67387119206515,
+            "airport": 22.929346180436287,
+            "baseballfield": 70.03885019909252,
+            "basketballcourt": 84.3962775035338,
+            "bridge": 28.169487772340123,
+            "chimney": 72.00549786741082,
+            "expressway-service-area": 62.57396665486422,
+            "expressway-toll-station": 61.48038289763711,
+            "dam": 10.845325267027048,
+            "golffield": 52.05687360668724,
+            "groundtrackfield": 79.97197698463093,
+            "harbor": 32.59914740920067,
+            "overpass": 42.228588868271224,
+            "ship": 77.38199450752951,
+            "stadium": 71.3286884806373,
+            "storagetank": 54.46194735440341,
+            "tenniscourt": 82.63905251568015,
+            "trainstation": 37.54715687510642,
+            "vehicle": 37.84806565804915,
+            "windmill": 28.118439492854204
+          }
+        }
+      }
+    }
+  },
+  "portable_full_evaluations": {
+    "n": {
+      "metrics": {
+        "AP50": 71.89086347818375,
+        "AP75": 46.04165859520435
+      },
+      "run": {
+        "runtime_origins": {
+          "engine": "/tmp/openrio_full_release_g4l3yaqg/package/vendor/engine/__init__.py",
+          "paper_modules": "/tmp/openrio_full_release_g4l3yaqg/package/vendor/paper_modules.py",
+          "openrio_config": "/tmp/openrio_full_release_g4l3yaqg/package/vendor/openrio_config.py",
+          "rio_cleanroom_overlay": "/tmp/openrio_full_release_g4l3yaqg/package/vendor/rio_cleanroom_overlay.py"
+        },
+        "model": "n",
+        "checkpoint_sha256": "7028f89ea8256e16fc2b30052c47c61697542a01288a2519e70407ee9e1c08ec",
+        "config_sha256": "ec07ffbb0b2aeadf1d7cf7b08820fdf4e4f05390792e145ef0911e1f2a9226c9",
+        "torch": "2.9.1+cu128",
+        "device": "cuda:0",
+        "protocol": "DIOR-R 11738 test images; single-view VOC07 rotated AP50; exploratory checkpoint selection",
+        "start": 1791527283.786414,
+        "images": 11738,
+        "complete": true,
+        "elapsed_seconds": 232.91387009620667
+      }
+    },
+    "s": {
+      "metrics": {
+        "AP50": 75.01996412873268,
+        "AP75": 51.547744274139404
+      },
+      "run": {
+        "runtime_origins": {
+          "engine": "/tmp/openrio_full_release_g4l3yaqg/package/vendor/engine/__init__.py",
+          "paper_modules": "/tmp/openrio_full_release_g4l3yaqg/package/vendor/paper_modules.py",
+          "openrio_config": "/tmp/openrio_full_release_g4l3yaqg/package/vendor/openrio_config.py",
+          "rio_cleanroom_overlay": "/tmp/openrio_full_release_g4l3yaqg/package/vendor/rio_cleanroom_overlay.py"
+        },
+        "model": "s",
+        "checkpoint_sha256": "89db236d0392a3232fc0736e02ee85017616cdc6bf73259ed2ca8dc2994efa46",
+        "config_sha256": "a519eac23d89a6a2c48d2e3d4f9f66c66adc5cfab904306c74ff70e9a874cd1f",
+        "torch": "2.9.1+cu128",
+        "device": "cuda:0",
+        "protocol": "DIOR-R 11738 test images; single-view VOC07 rotated AP50; exploratory checkpoint selection",
+        "start": 1791527521.9293506,
+        "images": 11738,
+        "complete": true,
+        "elapsed_seconds": 260.65864777565
+      }
+    },
+    "n_calibrated": {
+      "metrics": {
+        "AP50": 71.97825193405151,
+        "AP75": 45.95006000250578
+      },
+      "run": {
+        "runtime_origins": {
+          "engine": "/tmp/openrio_full_release_g4l3yaqg/package/vendor/engine/__init__.py",
+          "paper_modules": "/tmp/openrio_full_release_g4l3yaqg/package/vendor/paper_modules.py",
+          "openrio_config": "/tmp/openrio_full_release_g4l3yaqg/package/vendor/openrio_config.py",
+          "rio_cleanroom_overlay": "/tmp/openrio_full_release_g4l3yaqg/package/vendor/rio_cleanroom_overlay.py"
+        },
+        "model": "n_calibrated",
+        "checkpoint_sha256": "41760a7b67296c0fdf7acb2a9262fec0204aba0dc08689d6ce86d6caaeb8c4a2",
+        "config_sha256": "ec07ffbb0b2aeadf1d7cf7b08820fdf4e4f05390792e145ef0911e1f2a9226c9",
+        "torch": "2.9.1+cu128",
+        "device": "cuda:0",
+        "protocol": "DIOR-R 11738 test images; single-view VOC07 rotated AP50; exploratory checkpoint selection",
+        "start": 1791527045.1572235,
+        "images": 11738,
+        "complete": true,
+        "elapsed_seconds": 232.7737534046173
+      }
+    },
+    "m": {
+      "metrics": {
+        "AP50": 76.44814759492874,
+        "AP75": 54.05009306967259
+      },
+      "validation": {
+        "status": "PASS",
+        "model": "m",
+        "images": 11738,
+        "metrics": {
+          "AP50": 76.44814759492874,
+          "AP75": 54.05009306967259
+        },
+        "source_audit_delta": {
+          "AP50": 0.0,
+          "AP75": 0.0
+        },
+        "exported_sha256": "e3394902953785d79721493dd2b552668262aac4e38220af6f979bf2f2e0a823",
+        "config_sha256": "79005cebaa60d7a6c7d7570fdfce978b186dfeb07dad0c9dccaee3a28f418c98",
+        "at": 1791959853.9377873
+      },
+      "run": {
+        "runtime_origins": {
+          "engine": "${WORKBENCH}/github_release_20261014/OpenRiO/vendor/engine/__init__.py",
+          "paper_modules": "${WORKBENCH}/github_release_20261014/OpenRiO/vendor/paper_modules.py",
+          "openrio_config": "${WORKBENCH}/github_release_20261014/OpenRiO/vendor/openrio_config.py",
+          "rio_cleanroom_overlay": "${WORKBENCH}/github_release_20261014/OpenRiO/vendor/rio_cleanroom_overlay.py"
+        },
+        "model": "m",
+        "checkpoint_sha256": "e3394902953785d79721493dd2b552668262aac4e38220af6f979bf2f2e0a823",
+        "config_sha256": "79005cebaa60d7a6c7d7570fdfce978b186dfeb07dad0c9dccaee3a28f418c98",
+        "torch": "2.9.1+cu128",
+        "device": "cuda:0",
+        "protocol": "DIOR-R complete 11738 test images; uncalibrated EMA; single view; rotated VOC07 AP50/AP75",
+        "start": 1791959351.6031196,
+        "images": 11738,
+        "complete": true,
+        "elapsed_seconds": 500.90069484710693
+      }
+    },
+    "l": {
+      "metrics": {
+        "AP50": 76.19856685400009,
+        "AP75": 53.814746253192425
+      },
+      "validation": {
+        "status": "PASS",
+        "model": "l",
+        "images": 11738,
+        "metrics": {
+          "AP50": 76.19856685400009,
+          "AP75": 53.814746253192425
+        },
+        "source_audit_delta": {
+          "AP50": 0.0,
+          "AP75": 0.0
+        },
+        "exported_sha256": "c41a078f0b0ab6cd9e6fd978098bf6475ba425add196447d31390f48859f24fa",
+        "config_sha256": "8515875653396e108ddeec742482515c3fc8ac8204a8159e4d54bfc571bb2cb3",
+        "at": 1791959880.751653
+      },
+      "run": {
+        "runtime_origins": {
+          "engine": "${WORKBENCH}/github_release_20261014/OpenRiO/vendor/engine/__init__.py",
+          "paper_modules": "${WORKBENCH}/github_release_20261014/OpenRiO/vendor/paper_modules.py",
+          "openrio_config": "${WORKBENCH}/github_release_20261014/OpenRiO/vendor/openrio_config.py",
+          "rio_cleanroom_overlay": "${WORKBENCH}/github_release_20261014/OpenRiO/vendor/rio_cleanroom_overlay.py"
+        },
+        "model": "l",
+        "checkpoint_sha256": "c41a078f0b0ab6cd9e6fd978098bf6475ba425add196447d31390f48859f24fa",
+        "config_sha256": "8515875653396e108ddeec742482515c3fc8ac8204a8159e4d54bfc571bb2cb3",
+        "torch": "2.9.1+cu128",
+        "device": "cuda:0",
+        "protocol": "DIOR-R complete 11738 test images; uncalibrated EMA; single view; rotated VOC07 AP50/AP75",
+        "start": 1791959351.7470212,
+        "images": 11738,
+        "complete": true,
+        "elapsed_seconds": 527.1647114753723
+      }
+    }
+  },
+  "difficulty_inventory": {
+    "images": 11738,
+    "objects": 124445,
+    "xml_difficult_histogram": {
+      "0": 124445
+    },
+    "parser_policy": "Included upstream DiorDataset does not read XML difficult; all valid parsed objects participate. No boxes_ignore emitted by this dataset."
+  },
+  "annotation_identity": {
+    "images": 11738,
+    "test_annotation_sha256": "965457e7f9564553d5dd84b72bb740fc291bfd8f7282c1b1a6a70a49417d41a4",
+    "difficulty_counts": {
+      "0": 124445
+    },
+    "protocol": "Native DIOR convention: fit minimum-area rectangles, include parser-valid objects, VOC07 AP50/AP75. No silent difficulty filtering."
+  },
+  "export_identity": {
+    "n": {
+      "status": "PASS",
+      "tensor_state_exact": true,
+      "tensors": 577,
+      "source_sha256": "e5279132c915194745916ae129599c0f5d6b5e6422cb3e650f148e0e3b7fad4a",
+      "exported_sha256": "7028f89ea8256e16fc2b30052c47c61697542a01288a2519e70407ee9e1c08ec"
+    },
+    "s": {
+      "status": "PASS",
+      "tensor_state_exact": true,
+      "tensors": 637,
+      "source_sha256": "5876d3f2ee3e3c60da2677095cd9b91d9770ded8b7fb8385f581cc9b07442bdf",
+      "exported_sha256": "89db236d0392a3232fc0736e02ee85017616cdc6bf73259ed2ca8dc2994efa46"
+    },
+    "m": {
+      "status": "PASS",
+      "tensor_state_exact": true,
+      "tensors": 811,
+      "source_sha256": "db9f71947fffcb302894847e13ee64547edf1cb1e35b9b14831a6a06f81e13d0",
+      "exported_sha256": "e3394902953785d79721493dd2b552668262aac4e38220af6f979bf2f2e0a823"
+    },
+    "l": {
+      "status": "PASS",
+      "tensor_state_exact": true,
+      "tensors": 880,
+      "source_sha256": "31e737e2742904838e5a4914eb5c15cbddaeb5c4e0326398be2a11919378939b",
+      "exported_sha256": "c41a078f0b0ab6cd9e6fd978098bf6475ba425add196447d31390f48859f24fa"
+    }
+  }
+}

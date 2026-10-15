@@ -1,0 +1,20 @@
+Weights and release review
+
+The ten tensor-only detector artifacts and two terminal normalization snapshots are community-trained or community-refined
+weights with exact state and ancestry identifiers in models.json. They are
+bundled here for the project owner's requested early release preparation.
+No dataset images or annotations, optimizer states or personal credentials
+are included in these weight exports.
+
+Upstream RiO-DETR/RT-DETR-OBB model metadata and the HGNet stage-one hosting
+repository identify Apache-2.0. Preserve those notices. A repository license
+alone does not certify the rights of every upstream weight/data component.
+This preparation does not automatically relabel trained weights CC BY-NC
+merely because DIOR data uses that license, or represent them as commercially
+cleared merely because the code uses Apache-2.0.
+
+Before publishing weight assets, the maintainer should set an explicit
+asset-license declaration consistent with the retained ancestry notices.
+The source-code repository and report can be uploaded independently. This
+remaining license declaration is stated openly rather than silently treating
+source code, data, report images and trained weights as the same licensed work.

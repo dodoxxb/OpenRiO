@@ -1,0 +1,260 @@
+task: detection
+evaluator:
+  type: DotaEvaluator
+num_classes: 20
+remap_mscoco_category: false
+train_dataloader:
+  type: PaperDataLoader
+  dataset:
+    type: DiorDataset
+    img_folder: ${DATA_ROOT}/JPEGImages-trainval
+    ann_folder: ${DATA_ROOT}/Annotations/Oriented Bounding Boxes
+    ann_file:
+    - ${DATA_ROOT}/ImageSets/Main/train.txt
+    - ${DATA_ROOT}/ImageSets/Main/val.txt
+    return_masks: false
+    transforms:
+      type: PaperAlignedCompose
+      ops:
+      - type: PaperOrientedDenseO2O
+        output_size: 800
+        rotation_range: 0
+        translation_range:
+        - 0.1
+        - 0.1
+        scaling_range:
+        - 0.5
+        - 1.5
+        probability: 1.0
+        fill_value: 0
+        use_cache: false
+        max_cached_images: 50
+        random_pop: true
+        quadrant_rotations:
+        - 0
+        - 90
+        - 180
+        - 270
+      - type: RandomPhotometricDistort
+        p: 0.5
+      - type: RandomZoomOutOBB
+        fill: 0
+      - type: RandomIoUCropOBB
+        p: 0.8
+      - type: RandomHorizontalFlipOBB
+      - type: ResizeOBB
+        size:
+        - 800
+        - 800
+      - type: SanitizeBoundingBoxesOBB
+        min_size: 1
+      - type: ConvertPILImage
+        dtype: float32
+        scale: true
+      - type: ConvertOBB
+        normalize: true
+      policy:
+        name: stop_epoch
+        epoch:
+        - 4
+        - 64
+        - 120
+        ops:
+        - PaperOrientedDenseO2O
+        - RandomPhotometricDistort
+        - RandomZoomOutOBB
+        - RandomIoUCropOBB
+      mosaic_prob: 0.5
+  shuffle: true
+  num_workers: 4
+  drop_last: true
+  collate_fn:
+    type: BatchImageCollateFunction
+    base_size: 800
+    base_size_repeat: null
+    stop_epoch: 120
+    mixup_prob: 0.5
+    mixup_epochs:
+    - 4
+    - 64
+    ema_restart_decay: 0.9999
+  total_batch_size: 8
+val_dataloader:
+  type: DataLoader
+  dataset:
+    type: DiorDataset
+    img_folder: ${DATA_ROOT}/JPEGImages-test
+    ann_folder: ${DATA_ROOT}/Annotations/Oriented Bounding Boxes
+    ann_file: ${DATA_ROOT}/ImageSets/Main/test.txt
+    return_masks: false
+    transforms:
+      type: Compose
+      ops:
+      - type: ResizeOBB
+        size:
+        - 800
+        - 800
+        keep_ratio: true
+        pad_to_size: true
+        fill: 0
+      - type: SanitizeBoundingBoxesOBB
+        min_size: 1.0
+      - type: ConvertPILImage
+        dtype: float32
+        scale: true
+      - type: ConvertOBB
+        normalize: true
+  shuffle: false
+  num_workers: 2
+  drop_last: false
+  collate_fn:
+    type: BatchImageCollateFunction
+  total_batch_size: 2
+print_freq: 100
+output_dir: ./outputs
+checkpoint_freq: 10
+sync_bn: false
+find_unused_parameters: false
+use_amp: false
+scaler:
+  type: GradScaler
+  enabled: true
+use_ema: true
+ema:
+  type: ModelEMA
+  decay: 0.9999
+  warmups: 2000
+  start: 0
+epoches: 132
+clip_max_norm: 0.1
+optimizer:
+  type: AdamW
+  params:
+  - params: ^(?=.*backbone)(?=.*norm|bn).*$
+    lr: 1.0e-05
+    weight_decay: 0.0
+  - params: ^(?=.*(?:encoder|decoder))(?=.*(?:norm|bn)).*$
+    weight_decay: 0.0
+  lr: 0.0001
+  betas:
+  - 0.9
+  - 0.999
+  weight_decay: 0.0001
+model: RTv4
+criterion: OpenRiOPeriodicRTv4OBBCriterion
+postprocessor: PostProcessorOBB
+use_focal_loss: true
+eval_spatial_size:
+- 800
+- 800
+RTv4:
+  backbone: HGNetv2
+  encoder: HybridEncoder
+  decoder: PaperRiOTransformer
+lrsheduler: flatcosine
+lr_gamma: 0.1
+warmup_iter: -1
+flat_epoch: 64
+no_aug_epoch: 12
+HybridEncoder:
+  in_channels:
+  - 256
+  - 512
+  - 1024
+  feat_strides:
+  - 8
+  - 16
+  - 32
+  hidden_dim: 224
+  use_encoder_idx:
+  - 2
+  num_encoder_layers: 1
+  nhead: 8
+  dim_feedforward: 1024
+  dropout: 0.0
+  enc_act: gelu
+  expansion: 0.5
+  depth_mult: 0.34
+  act: silu
+  version: rtdetr
+HGNetv2:
+  name: B0
+  return_idx:
+  - 1
+  - 2
+  - 3
+  freeze_at: -1
+  freeze_norm: false
+  use_lab: true
+  pretrained: false
+PostProcessorOBB:
+  num_top_queries: 300
+  input_shape:
+  - 800
+  - 800
+config: ./outputs
+seed: 0
+test_only: false
+print_method: builtin
+print_rank: 0
+use_swanlab: false
+OpenRiOPeriodicRTv4OBBCriterion:
+  weight_dict:
+    loss_focal: 1
+    loss_l1: 5
+    loss_kld: 5
+  losses:
+  - focal
+  - l1
+  - kld
+  alpha: 0.75
+  gamma: 2.0
+  use_uni_set: true
+  matcher:
+    type: HungarianMatcherOBB
+    weight_dict:
+      cost_class: 2
+      cost_bbox: 0
+      cost_hausdorff: 5
+      cost_giou: 5
+    alpha: 0.25
+    gamma: 2.0
+  angle_loss_units: normalized
+summary_dir: ./outputs
+PaperRiOTransformer:
+  feat_channels:
+  - 224
+  - 224
+  - 224
+  feat_strides:
+  - 8
+  - 16
+  - 32
+  hidden_dim: 224
+  num_levels: 3
+  num_layers: 3
+  num_queries: 300
+  num_denoising: 100
+  label_noise_ratio: 0.5
+  box_noise_scale: 1.0
+  learn_query_content: true
+  eval_idx: -1
+  num_points:
+  - 4
+  - 4
+  - 4
+  cross_attn_method: default
+  query_select_method: default
+  query_pos_method: paper_sine
+  anchor_aspect_ratio: 1.0
+  dim_feedforward: 1024
+  rio_geometry_decoupled: true
+  rio_orthogonal_attention: true
+  rio_periodic_refinement: true
+  rio_alpha0: 1.5
+  rio_angle_step_units: normalized
+  pe_num_pos_feats: 112
+  pe_temperature: 10000.0
+  pe_coordinate_order: yxwh
+  layer_index_origin: 0
+openrio_lineage: compact4d

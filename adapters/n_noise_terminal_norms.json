@@ -1,0 +1,10 @@
+{
+  "parent_model": "n",
+  "parent_sha256": "7028f89ea8256e16fc2b30052c47c61697542a01288a2519e70407ee9e1c08ec",
+  "sha256": "a5bcfc596861af419f7888a4ce2199944778574f207b32def871385420335a89",
+  "stream": "synthetic Gaussian noise sigma 0.08",
+  "order_seed": 20261010,
+  "images": 11738,
+  "role": "terminal normalization snapshot; reported AP is online emit-before-update, NOT static terminal-weight AP",
+  "reproduce_command": "python adapt.py --recipe n_noise --data-root DATA_ROOT --output outputs/n-noise"
+}

@@ -1,0 +1,13 @@
+{
+  "model": "s",
+  "checkpoint_sha256": "89db236d0392a3232fc0736e02ee85017616cdc6bf73259ed2ca8dc2994efa46",
+  "order_seed": 20261010,
+  "stream": "noise",
+  "arm": "dynamic_anchor",
+  "loss_mode": "full",
+  "lr": 0.0001,
+  "allocator_fraction": 0.07,
+  "admission_free_mib": 4200,
+  "rollback_drift": 0.25,
+  "maximum_rollbacks": 3
+}

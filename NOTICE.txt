@@ -1,0 +1,23 @@
+OpenRiO attribution and redistribution notice
+
+Community packaging and modifications, 2026, OpenRiO contributors.
+The Apache-2.0 LICENSE covers source code, subject to the original notices
+within copied files. vendor/engine derives from RicePasteM/RiO-DETR and retains
+RT-DETR, D-FINE, DEIM, RT-DETRv4 and other source attribution headers.
+Community reconstruction, execution and evaluation overlays are identified
+by the source hashes in provenance/. Original method credit is not claimed.
+
+Primary sources checked:
+https://github.com/RicePasteM/RiO-DETR/blob/master/LICENSE
+https://github.com/Peterande/D-FINE/blob/master/LICENSE
+https://github.com/Peterande/storage/blob/master/LICENSE
+https://huggingface.co/RicePasteM/RT-DETR-OBB
+https://gcheng-nwpu.github.io/#Datasets
+
+The DIOR and DIOR-R dataset site states CC BY-NC 4.0. Dataset images and
+annotations are not bundled. Research-report image excerpts are attributed
+to DIOR/DIOR-R, Gong Cheng and collaborators, and are excluded from the source
+code license. Preserve their noncommercial attribution terms when sharing.
+Source-code licensing does not settle all trained-weight/data rights or
+commercial deployment rights. See WEIGHTS_NOTICE.txt; no blanket commercial
+clearance is represented by this archive.

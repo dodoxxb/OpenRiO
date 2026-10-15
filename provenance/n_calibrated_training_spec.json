@@ -1,0 +1,47 @@
+{
+  "ema_decay": 0.999,
+  "freeze_bn": true,
+  "backbone_mult": 0.1,
+  "config": "${LEGACY_WORKSPACE}/autopilot_convergence_20261002/reproduction_17_continuation/restart_seed1/config.yml",
+  "output": "${WORKBENCH}/mechanism_20261008/nano_pair/higher_lr",
+  "init_path": "${WORKBENCH}/review_20261005/batch_and_ranking/rotation_plateau96/snapshot015_ema0.999.pth",
+  "init_which": "model",
+  "init": "selected_trained_model",
+  "epochs": 24,
+  "absolute_start": 2684,
+  "warmup_steps": 0,
+  "batch_size": 8,
+  "seed": 1,
+  "track": "community_training_refinement",
+  "min_lr_ratio": 0.1,
+  "checkpoint_interval": 4,
+  "checkpoint_each_epoch": false,
+  "source_candidate": {
+    "checkpoint": "${WORKBENCH}/review_20261005/batch_and_ranking/rotation_plateau96/snapshot015_ema0.999.pth",
+    "ap50": 71.85620874166489
+  },
+  "full_eval_interval": 4,
+  "role": "continuation",
+  "method_claim": "Registered fresh-AdamW paired LR restart from latest Nano best; same batch8, seed1, frozen BN, quarter turns, and primary EMA.999. Concurrent EMA.9999 diagnoses averaging lag on the SAME weight trajectory. No result claimed before full test.",
+  "monitor": "train-side diagnostic only; full-test exploratory selection disclosed",
+  "name": "nano_best_higher_lr",
+  "lr": 1e-06,
+  "init_sha256": "3752017c7929dcb74f3951952c6727a5a25ea9fac4e04784963fc59b04d8b490",
+  "config_sha256": "8cb5021e2b4cbb55325ced18aacdb70ae3b953b85526b39ea2fea69de1ef0fa4",
+  "probe_original_spec": "${LEGACY_WORKSPACE}/autopilot_convergence_20261002/reproduction_17_continuation/restart_seed1/spec.json",
+  "accumulation": 1,
+  "normalization_disclosure": "Accumulated mean microbatch losses are not exact joint-GT-normalized physical batch. BN frozen. EMA decay matched per seen image.",
+  "code_hashes": {
+    "${WORKBENCH}/review_20261005/batch_and_ranking/train_tuning.py": "94f7d147822fe02c9a3b8f492acaff4c0d5414afb1723bb24c44d2fc97993783",
+    "${WORKBENCH}/review_20261005/batch_and_ranking/tuning_ops.py": "fe514006ec7a3347cce9f928f6f69ceff7ae5589a15872a9afbae2519b8768aa",
+    "${WORKBENCH}/review_20261005/batch_and_ranking/bootstrap.py": "68ab4770be6e5885aa7c89e46ce7982023fad76580e982b12b263ccdcf2ce83d"
+  },
+  "extra_ema_decays": [
+    0.9999
+  ],
+  "clip_norm": 0.1,
+  "freeze_backbone": false,
+  "quarter_turn_training": true,
+  "memory_policy": "Wait for <=1 existing GPU2 process and >=14GB free, cap25%, eight-batch real smoke, preserve allGT; no automatic OOM retry.",
+  "resume_training": false
+}
