@@ -1,4 +1,4 @@
-Publish OpenRiO v0.1.0-preview.7
+Publish OpenRiO v0.1.0-preview
 =================================
 
 Use the source ZIP for the GitHub repository. Its README.md, openrio.py,

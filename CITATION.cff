@@ -11,7 +11,7 @@ authors:
     given-names: Lan
     email: malan@sz.tsinghua.edu.cn
     affiliation: "Tsinghua Shenzhen International Graduate School, Tsinghua University"
-version: 0.1.0-preview.7
+version: 0.1.0-preview
 license: Apache-2.0
 repository-code: "https://github.com/dodoxxb/OpenRiO"
 url: "https://github.com/dodoxxb/OpenRiO"
